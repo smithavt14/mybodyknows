@@ -1,0 +1,8 @@
+.page__container {
+  min-height: 100vh;
+  width: 100vw;
+  background: radial-gradient(46.37% 21.18% at 49.87% 21.43%, #F9F1F0 0%, #EEB8B9 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

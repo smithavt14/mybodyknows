@@ -1,0 +1,3 @@
+<view class="page__container">
+  <view style="margin-top: 100rpx;">{{score}}/10</view>
+</view>

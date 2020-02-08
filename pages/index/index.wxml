@@ -1,0 +1,27 @@
+<view class="page__container">
+  
+  <view class="top-box">
+    <image class="logo" src="/assets/images/logo-round-dark.png" mode="aspectFit"></image>
+  </view>
+  
+  <view class="middle-box">
+    <view class="small-txt">测一测</view>
+    <view class="medium-txt">你是不是</view>
+    <view class="large-txt">性爱大师？</view>
+  </view>
+  
+  <view class="bottom-box">
+    <button 
+    wx:if="{{user}}" 
+    class="btn"
+    hover-class="btn-hover"
+    bindtap="navigateToQuiz">开始</button> 
+
+    <button 
+    wx:else 
+    class="btn" 
+    hover-class="btn-hover"
+    open-type="getUserInfo" 
+    bindgetuserinfo="userInfoHandler">登陆与开始</button>
+  </view>
+</view>
