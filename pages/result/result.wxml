@@ -1,21 +1,16 @@
 <view class="page__container">
-  <view style="margin-top: 100rpx;">{{score}}/10</view>
-  
-  <canvas type="2d" id="first" class="poster-container">
-    <image class="banner" mode="aspectfit" src="../../assets/images/banner.jpg"></image>
-    
-    <view class="user-container">
-      <image src="{{user.avatar}}" class="avatar"></image>
-      <view class="name">{{user.nickname}}</view>
-    </view>
+  <block wx:if="{{showPoster}}">
+    <canvas 
+    class="canvas" 
+    canvas-id="resultPoster" 
+    bindlongtap="savePoster"
+    style="width: {{poster.width}}px; height: {{poster.height}}px;"></canvas>
 
-    <view class="score-container">
-      <view class="score">{{score}}/10</view>
-      <view class="title">Sex Master</view>
-      <view class="subtitle">恭喜您！您是一个爱性专家。继续在床上加油！</view>
-    </view>
-  </canvas>
-  
-  <button bindtap="saveCanvas"
-  style="margin-top: 25rpx;">Download Image</button>
+    <view class="note" >长按保存</view>
+
+    <button 
+    bindtap="navigateHome" 
+    class="btn" 
+    hover-class="btn-hover">回首页</button>
+  </block>
 </view>

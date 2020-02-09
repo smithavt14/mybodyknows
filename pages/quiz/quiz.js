@@ -9,8 +9,10 @@ Page({
 
   // ----- Quiz Functions -----
   getQuiz: async function (id) {
+    wx.showLoading({ title: '加载中'})
     _quiz.getQuiz(id).then(questions => {
       this.setData({ questions })
+      wx.hideLoading()
     })
   },
 

@@ -53,6 +53,8 @@
   font-size: 40rpx;
   font-weight: 200;
   transition: all .25s ease;
+  position: absolute;
+  bottom: 70rpx;
 }
 
 .bottom-box .btn-hover {
