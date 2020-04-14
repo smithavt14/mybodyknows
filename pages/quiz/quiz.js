@@ -8,9 +8,9 @@ Page({
   },
 
   // ----- Quiz Functions -----
-  getQuiz: async function (id) {
+  getQuestions: async function (id) {
     wx.showLoading({ title: '加载中'})
-    _quiz.getQuiz(id).then(questions => {
+    _quiz.getQuestions(id).then(questions => {
       this.setData({ questions })
       wx.hideLoading()
     })
@@ -49,6 +49,6 @@ Page({
   // ----- Lifecycle Functions -----
   onLoad: function () {
     this.getCurrentUser()
-    this.getQuiz(1)
+    this.getQuestions('5e95bffc13d1201c358aa836');
   }
 })

@@ -1,11 +1,11 @@
-const getQuiz = (id) => {
+const getQuestions = (id) => {
   return new Promise(resolve => {
-    let query = new wx.BaaS.Query()
+    const query = new wx.BaaS.Query()
 
     query.compare('quiz_id', '=', id)
 
-    let Quiz = new wx.BaaS.TableObject('quiz')
-    Quiz.setQuery(query).find().then(res => {
+    const Question = new wx.BaaS.TableObject('question')
+    Question.setQuery(query).find().then(res => {
       resolve(res.data.objects)
     }, err => {
       console.log(err)
@@ -14,4 +14,18 @@ const getQuiz = (id) => {
   })
 }
 
-module.exports = { getQuiz }
+const getQuizData = (id) => {
+  return new Promise(resolve => {
+    const Quiz = new wx.BaaS.TableObject('quiz')
+
+    Quiz.get(id).then(res => {
+      console.log(res)
+      resolve(res.data)
+    }, err => {
+      console.log(err)
+      resolve(undefined)
+    })
+  })
+}
+
+module.exports = { getQuestions, getQuizData }
